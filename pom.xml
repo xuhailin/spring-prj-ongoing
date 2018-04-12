@@ -13,5 +13,6 @@
     </properties>
     <modules>
         <module>cloud-prj</module>
+        <module>cloud-client-prj</module>
     </modules>
 </project>
