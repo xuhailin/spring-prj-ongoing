@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- *
  * 可以看到注入了 Registration 和 DiscoveryClient 两个对象：
  * Registration 服务注册接口，包含了获取服务 ID 的方法。
  * DiscoveryClient 服务发现客户端，具有以下方法：
@@ -22,7 +21,7 @@ import java.util.List;
  * ServiceInstance getLocalServiceInstance(); @Deprecated 方法被删除，推荐不要使用。获取本地服务实例
  * List<ServiceInstance> getInstances(String serviceId);  通过服务 ID，获取当前服务的服务实例
  * List<String> getServices(); 获取所有服务 ID 列表
- *
+ * <p>
  * Created by fjm on 2018/4/12.
  */
 @RestController
