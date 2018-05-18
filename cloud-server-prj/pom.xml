@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloud-prj</name>
+	<name>cloud-server-prj</name>
 	<description>An Eureka Server</description>
 
 	<parent>
