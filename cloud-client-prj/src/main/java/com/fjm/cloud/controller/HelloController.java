@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.client.serviceregistry.Registration;
+//import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,27 +31,27 @@ public class HelloController {
 
     @Autowired
     private DiscoveryClient discoveryClient;// 服务发现客户端
-    @Autowired
-    private Registration registration;// 服务注册
+//    @Autowired
+//    private Registration registration;// 服务注册
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() throws Exception {
-        ServiceInstance instance = serviceInstance();
+        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
         logger.info("/hello, host:" + instance.getHost() + ", service_id:" + instance.getServiceId());
         return "Hello World";
     }
 
-    /**
-     * 获取当前服务的服务实例
-     *
-     * @return ServiceInstance
-     */
-    public ServiceInstance serviceInstance() {
-        List<ServiceInstance> list = discoveryClient.getInstances(registration.getServiceId());
-        if (list != null && list.size() > 0) {
-            return list.get(0);
-        }
-        return null;
-    }
+//    /**
+//     * 获取当前服务的服务实例
+//     *
+//     * @return ServiceInstance
+//     */
+//    public ServiceInstance serviceInstance() {
+//        List<ServiceInstance> list = discoveryClient.getInstances(registration.getServiceId());
+//        if (list != null && list.size() > 0) {
+//            return list.get(0);
+//        }
+//        return null;
+//    }
 
 }
