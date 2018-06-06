@@ -15,6 +15,7 @@
         <module>cloud-server-prj</module>
         <module>cloud-client-prj</module>
         <module>ribbon-conusmer</module>
+        <module>feign-consumer</module>
     </modules>
 
     <repositories>
